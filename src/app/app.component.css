@@ -1,0 +1,21 @@
+.red{
+    color: rgb(20, 20, 167);
+    margin: 0px;
+    font-style: oblique;
+}
+
+h1{
+    text-align: center;
+}
+
+.boldClass{
+    font-weight: bold;
+}
+
+.italic{
+    font-style: italic;
+}
+
+.danger{
+    border: 2px solid red;
+}

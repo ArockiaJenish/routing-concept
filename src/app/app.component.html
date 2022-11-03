@@ -1,0 +1,49 @@
+<!-- <input type="text" name="email" [formControl]="email">
+<p class="red" *ngIf="email.errors">Enter valied email</p>
+<button (click)="getValue()">Click Me</button> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+
+    </div>
+    <div class="col-6">
+      <h1>Validation Task</h1>
+      <form [formGroup]="fg" class="form-group">
+        <label for="name">Name:</label>
+        <input class="form-control" [class.is-invalid]="names.invalid && names.touched" type="text"
+          formControlName="name">
+        <p *ngIf="names.invalid && names.touched" class="red">Name is required</p><br>
+        <label for="userName">UserName:</label>
+        <input class="form-control" [class.is-invalid]="userName?.invalid && userName?.touched" type="text" formControlName="userName">
+        <p *ngIf="userName?.invalid && userName?.touched" class="red">User name is required
+        </p><br>
+        <label for="email">Email:</label>
+        <input class="form-control" [class.is-invalid]="emails.invalid && emails.touched" type="text" formControlName="email">
+        <p *ngIf="emails.invalid && emails.touched" class="red">Enter valid email</p><br>
+        <label for="phone">Phone:</label>
+        <input class="form-control" [class.is-invalid]="phone?.invalid && phone?.touched" type="text" formControlName="phone">
+        <p *ngIf="phone?.invalid && phone?.touched" class="red">Enter valid mobile number</p>
+        <br>
+        <label for="company">Company:</label>
+        <!-- <input class="form-control" type="text" formControlName="company"> -->
+        <select class="form-control" [class.is-invalid]="company?.invalid && company?.touched" formControlName="company" id="">
+          <option value="">Choose</option>
+          <option *ngFor="let c of companies" [value]= c>{{c}}</option>
+        </select>
+        <p *ngIf="company?.invalid && company?.touched" [class]="red">Company name is
+          required
+        </p><br>
+        <label for="website">WebSite</label>
+        <input class="form-control" [class.is-invalid]="website?.invalid && website?.touched" type="text" formControlName="website">
+        <p *ngIf="website?.invalid && website?.touched " class="red">Website is required</p>
+        <br>
+        <button (click)="register()" [disabled]="fg.invalid" class="btn btn-primary">SignUp</button>
+      </form>
+    </div>
+    <div class="col-3">
+      <!-- <h1 [ngClass]="applyClass()">ngClass Example</h1>
+      <p [class.boldClass]="bold" (mouseover)="bold=true" (mouseout)="bold=false">Class binding</p> -->
+    </div>
+  </div>
+</div>
